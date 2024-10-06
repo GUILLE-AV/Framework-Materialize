@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G_EXCLUSIVE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+       /* Estilos para que las tarjetas sean responsivas */
+       .card-container {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 50px;
+        }
+
+        /* Asegurar que las tarjetas ocupen el 100% en pantallas pequeñas */
+        .card {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Cambiar el tamaño en pantallas medianas */
+        @media (min-width: 600px) {
+            .card {
+                width: 45%;
+            }
+        }
+
+        /* Cambiar el tamaño en pantallas grandes */
+        @media (min-width: 992px) {
+            .card {
+                width: 30%;
+            }
+        }
+
+        footer {
+            max-height: 400px;
+        }
+
+        body,
+        html {
+            height: 100%;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Inicializar dropdown
+            var elems = document.querySelectorAll('.dropdown-trigger');
+            M.Dropdown.init(elems, {
+                closeOnClick: true,
+                coverTrigger: false
+            });
+
+            // Inicializar sidenav para dispositivos móviles
+            var sidenavElems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(sidenavElems);
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="lamborghini.html">Lamborghini</a></li>
+            <li><a href="ferrari.html">Ferrari</a></li>
+            <li><a href="bugatti.html">Bugatti</a></li>
+        </ul>
+        <nav>
+            <div class="nav-wrapper #424242 grey darken-3">
+                <a href="#!" class="brand-logo">G_EXCLUSIVE</a>
+                <!-- Botón para el sidenav en dispositivos móviles -->
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Colecciones<i
+                                class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+            </div>
+
+            <ul class="sidenav" id="mobile-demo">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="lamborghini.html">Lamborghini</a></li>
+                <li><a href="ferrari.html">Ferrari</a></li>
+                <li><a href="bugatti.html">Bugatti</a></li>
+            </ul>
+        </nav>
+
+    <main>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="buga/chiron.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Bugatti chiron<i
+                            class="material-icons right">more_vert</i></span>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Bugatti chiron<i
+                            class="material-icons right">close</i></span>
+                    <p>El Bugatti Chiron es un automóvil superdeportivo cupé de dos puertas biplaza, con motor
+                        central-trasero montado longitudinalmente y de tracción integral, diseñado y desarrollado por
+                        Bugatti Automobiles S.A.S. subsidiaria del Grupo Volkswagen.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="buga/veyron.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Bugatti veyron<i
+                            class="material-icons right">more_vert</i></span>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Bugatti veyron<i
+                            class="material-icons right">close</i></span>
+                    <p>El Bugatti Veyron es un automóvil superdeportivo biplaza diseñado y desarrollado por el Grupo
+                        Volkswagen y producido en Molsheim, Alsacia (Francia), por el fabricante Bugatti Automobiles
+                        S.A.S. desde 2005 hasta 2015.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="page-footer #424242 grey darken-3">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">G_EXCLUSIVE</h5>
+                    <p class="grey-text text-lighten-4">La mayor coleccion de autos deportivos de Honduras.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Visitanos</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="index.html">Inicio</a></li>
+                        <li><a class="grey-text text-lighten-3" href="lamborghini.html">Lamborghini</a></li>
+                        <li><a class="grey-text text-lighten-3" href="ferrari.html">Ferrari</a></li>
+                        <li><a class="grey-text text-lighten-3" href="bugatti.html">Bugatti</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2014 G_EXCLUSIVE
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G_EXCLUSIVE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        main {
+            height: 100vh;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .card-wrapper {
+            padding-top: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        footer {
+            max-height: 400px;
+        }
+
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Inicializar dropdown
+            var elems = document.querySelectorAll('.dropdown-trigger');
+            var instances = M.Dropdown.init(elems, {
+                closeOnClick: true,
+                coverTrigger: false
+            });
+
+            // Inicializar sidenav para dispositivos móviles
+            var sidenavElems = document.querySelectorAll('.sidenav');
+            var sidenavInstances = M.Sidenav.init(sidenavElems);
+
+            // Cambio de imagen al hacer clic en los botones de paginación
+            const imgElement = document.querySelector('.card-image img');
+            const paginationLinks = document.querySelectorAll('.pagination a');
+
+            paginationLinks.forEach(link => {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    const newImageSrc = this.getAttribute('href');
+                    imgElement.setAttribute('src', newImageSrc);
+                    paginationLinks.forEach(link => link.parentElement.classList.remove('active'));
+                    this.parentElement.classList.add('active');
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="lamborghini.html">Lamborghini</a></li>
+            <li><a href="ferrari.html">Ferrari</a></li>
+            <li><a href="bugatti.html">Bugatti</a></li>
+        </ul>
+        <nav>
+            <div class="nav-wrapper #424242 grey darken-3">
+                <a href="#!" class="brand-logo">G_EXCLUSIVE</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Colecciones<i
+                                class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="lamborghini.html">Lamborghini</a></li>
+            <li><a href="ferrari.html">Ferrari</a></li>
+            <li><a href="bugatti.html">Bugatti</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="card-wrapper">
+                <div class="card card-panel hoverable">
+                    <div class="card-image">
+                        <img class="responsive-img" src="inicio/bugatis.jpg" alt="G_EXCLUSIVE Image">
+                        <span class="card-title">G_EXCLUSIVE</span>
+                    </div>
+                    <div class="card-content">
+                        <p class="flow-text justify-content">G_EXCLUSIVE comenzo con el sueño de ser la marca con la mejor coleccion de
+                            autos super deportivos de todo Honduras actual mente contamos con una alta gama de autos
+                            100% europeos y de las marcas mas reconocidas.</p>
+                    </div>
+                    <ul class="pagination center-align">
+                        <li class="active"><a href="inicio/bugatis.jpg">1</a></li>
+                        <li class="waves-effect"><a href="inicio/lambos.jpg">2</a></li>
+                        <li class="waves-effect"><a href="inicio/ferraris.jpg">3</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="page-footer #424242 grey darken-3">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">G_EXCLUSIVE</h5>
+                    <p class="grey-text text-lighten-4">La mayor coleccion de autos deportivos de Honduras.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Visitanos</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="index.html">Inicio</a></li>
+                        <li><a class="grey-text text-lighten-3" href="lamborghini.html">Lamborghini</a></li>
+                        <li><a class="grey-text text-lighten-3" href="ferrari.html">Ferrari</a></li>
+                        <li><a class="grey-text text-lighten-3" href="bugatti.html">Bugatti</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2014 G_EXCLUSIVE
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

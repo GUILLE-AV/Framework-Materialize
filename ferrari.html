@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G_EXCLUSIVE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* Estilos para que las tarjetas sean responsivas */
+        .card-container {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 50px;
+        }
+
+        /* Asegurar que las tarjetas ocupen el 100% en pantallas pequeñas */
+        .card {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Cambiar el tamaño en pantallas medianas */
+        @media (min-width: 600px) {
+            .card {
+                width: 45%;
+            }
+        }
+
+        /* Cambiar el tamaño en pantallas grandes */
+        @media (min-width: 992px) {
+            .card {
+                width: 30%;
+            }
+        }
+
+        footer {
+            max-height: 400px;
+        }
+
+        body,
+        html {
+            height: 100%;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Inicializar dropdown
+            var elems = document.querySelectorAll('.dropdown-trigger');
+            M.Dropdown.init(elems, {
+                closeOnClick: true,
+                coverTrigger: false
+            });
+
+            // Inicializar sidenav para dispositivos móviles
+            var sidenavElems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(sidenavElems);
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="lamborghini.html">Lamborghini</a></li>
+            <li><a href="ferrari.html">Ferrari</a></li>
+            <li><a href="bugatti.html">Bugatti</a></li>
+        </ul>
+        <nav>
+            <div class="nav-wrapper #424242 grey darken-3">
+                <a href="#!" class="brand-logo">G_EXCLUSIVE</a>
+                <!-- Botón para el sidenav en dispositivos móviles -->
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Colecciones<i
+                                class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="lamborghini.html">Lamborghini</a></li>
+            <li><a href="ferrari.html">Ferrari</a></li>
+            <li><a href="bugatti.html">Bugatti</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="ferrari/f8.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Ferrari F8<i
+                            class="material-icons right">more_vert</i></span>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Ferrari F8<i
+                            class="material-icons right">close</i></span>
+                    <p>El Ferrari F8 Tributo es la nueva berlinetta biplaza con motor central-trasero, máximo exponente
+                        de este tipo de vehículo de la casa del Cavallino Rampante. Se trata de un coche con
+                        características únicas y, como su nombre indica, que homenajea al motor V8 Ferrari más potente
+                        de la historia. </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="ferrari/laf.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Ferrari LaFerrari<i
+                            class="material-icons right">more_vert</i></span>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Ferrari LaFerrari<i
+                            class="material-icons right">close</i></span>
+                    <p>El LaFerrari es el primer coche con tecnología híbrida en la historia de Maranello. El motor V12
+                        de 6262cc ofrece 800 CV mientras que el motor eléctrico añade 120 KW (163 CV) para sumár más de
+                        960 CV. Gracias al enorme salto tecnológico que aporta el sistema HY-KERS, el LaFerrari es el
+                        vehículo de mayor rendimiento y eficiencia jamás construido en la historia de Ferrari. </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="ferrari/sf.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Ferrari SF90<i
+                            class="material-icons right">more_vert</i></span>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Ferrari SF90<i
+                            class="material-icons right">close</i></span>
+                    <p>El nombre del automóvil sintetiza el verdadero significado de todo lo que se ha logrado en
+                        términos de prestaciones. La referencia al 90 aniversario de la creación de la Scuderia Ferrari
+                        subraya el fuerte vínculo que siempre ha existido entre circuito y carretera en todos los
+                        Ferrari. </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="page-footer #424242 grey darken-3">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">G_EXCLUSIVE</h5>
+                    <p class="grey-text text-lighten-4">La mayor coleccion de autos deportivos de Honduras.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Visitanos</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="index.html">Inicio</a></li>
+                        <li><a class="grey-text text-lighten-3" href="lamborghini.html">Lamborghini</a></li>
+                        <li><a class="grey-text text-lighten-3" href="ferrari.html">Ferrari</a></li>
+                        <li><a class="grey-text text-lighten-3" href="bugatti.html">Bugatti</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2014 G_EXCLUSIVE
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
